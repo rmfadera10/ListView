@@ -2,6 +2,7 @@ package com.letstravel.listview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,8 +52,11 @@ private Map<String, String> country;
                 String capital=country.get(cont);
               //  Toast.makeText(MainActivity.this, "Capital of" +cont+ "is :"+capital, Toast.LENGTH_SHORT).show();
 
-
+                Intent intent=new Intent(MainActivity.this, CapitalActivity.class);
+                intent.putExtra("Capital", capital);
+                startActivity(intent);
             }
         });
+
     }
 }
